@@ -3,7 +3,7 @@
 const MIN_AGE = 18;
 const MAX_AGE = 90;
 const MIN_NAME_LENGTH = 4;
-const MIN_POSITOIN_LENGTH = 4;
+const MIN_POSITION_LENGTH = 4;
 const TIMER = 3000;
 const CITIES = [
   'Tokyo',
@@ -74,7 +74,7 @@ function removeActive(elem) {
   const activeRow = document.querySelector('.active');
   const clickedRow = elem.target.closest('tr');
 
-  if (!clickedRow) {
+  if (!clickedRow && activeRow) {
     activeRow.removeAttribute('class');
   }
 }
@@ -170,7 +170,7 @@ const buttonExercise = (elemForm) => {
     return;
   }
 
-  if (positionValue.length < MIN_POSITOIN_LENGTH) {
+  if (positionValue.length < MIN_POSITION_LENGTH) {
     pushNotification(
       'Error message',
       'Position must be at least 4 characters long!' + 'Write right position!',
